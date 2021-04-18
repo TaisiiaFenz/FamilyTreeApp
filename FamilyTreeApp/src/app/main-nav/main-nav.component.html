@@ -1,0 +1,59 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>FamilyTreeApp</span>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Me</mat-toolbar>
+    <mat-nav-list>
+      <div>
+        <a mat-list-item
+          (click)="showPersonalInfo()">
+          Personal info
+        </a>
+        <app-personal-info *ngIf="personalInfo"></app-personal-info>
+      </div>
+      <div>
+        <a mat-list-item
+           (click)="showParentsSettings()">
+          Parents
+        </a>
+        <app-parents-settings *ngIf="parentsSettings"></app-parents-settings>
+      </div>
+      <div>
+        <a mat-list-item
+           (click)="showPartnersSettings()">
+          Partner/Ex
+        </a>
+        <app-partners-settings *ngIf="partnersSettings"></app-partners-settings>
+      </div>
+      <div>
+        <a mat-list-item
+           (click)="showSiblingSettings()">
+          Brothers/Sisters
+        </a>
+        <app-sibling-settings *ngIf="siblingSettings"></app-sibling-settings>
+      </div>
+      <div>
+        <a mat-list-item
+           (click)="showChildrenSettings()">
+          Children
+        </a>
+        <app-children-settings *ngIf="childrenSettings"></app-children-settings>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>
