@@ -18,6 +18,9 @@ import { SiblingSettingsComponent } from './sibling-settings/sibling-settings.co
 import { ChildrenSettingsComponent } from './children-settings/children-settings.component';
 import { StoreModule } from '@ngrx/store';
 import { entityReducer } from './redux/entity.reducer';
+import { NodeComponent } from './node/node.component';
+import { FamilyTreeComponent } from './family-tree/family-tree.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { entityReducer } from './redux/entity.reducer';
     ParentsSettingsComponent,
     PartnersSettingsComponent,
     SiblingSettingsComponent,
-    ChildrenSettingsComponent
+    ChildrenSettingsComponent,
+    NodeComponent,
+    FamilyTreeComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,8 @@ import { entityReducer } from './redux/entity.reducer';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    StoreModule.forRoot({entityPage: entityReducer})
+    StoreModule.forRoot({entityPage: entityReducer}),
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
