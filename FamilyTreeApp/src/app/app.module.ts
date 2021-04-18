@@ -20,6 +20,7 @@ import { StoreModule } from '@ngrx/store';
 import { entityReducer } from './redux/entity.reducer';
 import { NodeComponent } from './node/node.component';
 import { FamilyTreeComponent } from './family-tree/family-tree.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { FamilyTreeComponent } from './family-tree/family-tree.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    StoreModule.forRoot({entityPage: entityReducer})
+    StoreModule.forRoot({entityPage: entityReducer}),
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
