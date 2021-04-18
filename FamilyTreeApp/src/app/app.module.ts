@@ -11,11 +11,21 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { PersonalInfoComponent } from './personal-info/personal-info.component';
+import { ParentsSettingsComponent } from './parents-settings/parents-settings.component';
+import { PartnersSettingsComponent } from './partners-settings/partners-settings.component';
+import { SiblingSettingsComponent } from './sibling-settings/sibling-settings.component';
+import { ChildrenSettingsComponent } from './children-settings/children-settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainNavComponent
+    MainNavComponent,
+    PersonalInfoComponent,
+    ParentsSettingsComponent,
+    PartnersSettingsComponent,
+    SiblingSettingsComponent,
+    ChildrenSettingsComponent
   ],
   imports: [
     BrowserModule,

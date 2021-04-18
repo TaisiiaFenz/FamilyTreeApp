@@ -19,16 +19,41 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Me</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item
-         (click)="showPersonalInfo()"
-      >
-        Personal info
-      </a>
-      <div *ngIf="personalInfo"> My info </div>
-      <a mat-list-item href="#">Parents</a>
-      <a mat-list-item href="#">Partner/Ex</a>
-      <a mat-list-item href="#">Brothers/Sisters</a>
-      <a mat-list-item href="#">Children</a>
+      <div>
+        <a mat-list-item
+          (click)="showPersonalInfo()">
+          Personal info
+        </a>
+        <app-personal-info *ngIf="personalInfo"></app-personal-info>
+      </div>
+      <div>
+        <a mat-list-item
+           (click)="showParentsSettings()">
+          Parents
+        </a>
+        <app-parents-settings *ngIf="parentsSettings"></app-parents-settings>
+      </div>
+      <div>
+        <a mat-list-item
+           (click)="showPartnersSettings()">
+          Partner/Ex
+        </a>
+        <app-partners-settings *ngIf="partnersSettings"></app-partners-settings>
+      </div>
+      <div>
+        <a mat-list-item
+           (click)="showSiblingSettings()">
+          Brothers/Sisters
+        </a>
+        <app-sibling-settings *ngIf="siblingSettings"></app-sibling-settings>
+      </div>
+      <div>
+        <a mat-list-item
+           (click)="showChildrenSettings()">
+          Children
+        </a>
+        <app-children-settings *ngIf="childrenSettings"></app-children-settings>
+      </div>
     </mat-nav-list>
   </mat-sidenav>
 </mat-sidenav-container>

@@ -17,11 +17,27 @@ export class MainNavComponent {
     );
 
   personalInfo = false;
+  parentsSettings = false;
+  partnersSettings = false;
+  siblingSettings = false;
+  childrenSettings = false;
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   showPersonalInfo() {
     this.personalInfo = !this.personalInfo;
+  }
+  showParentsSettings() {
+    this.parentsSettings = !this.parentsSettings;
+  }
+  showPartnersSettings() {
+    this.partnersSettings = !this.partnersSettings;
+  }
+  showSiblingSettings() {
+    this.siblingSettings = !this.siblingSettings;
+  }
+  showChildrenSettings() {
+    this.childrenSettings = !this.childrenSettings;
   }
 
 }
