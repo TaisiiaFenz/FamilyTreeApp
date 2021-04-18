@@ -18,6 +18,8 @@ import { SiblingSettingsComponent } from './sibling-settings/sibling-settings.co
 import { ChildrenSettingsComponent } from './children-settings/children-settings.component';
 import { StoreModule } from '@ngrx/store';
 import { entityReducer } from './redux/entity.reducer';
+import { NodeComponent } from './node/node.component';
+import { FamilyTreeComponent } from './family-tree/family-tree.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { entityReducer } from './redux/entity.reducer';
     ParentsSettingsComponent,
     PartnersSettingsComponent,
     SiblingSettingsComponent,
-    ChildrenSettingsComponent
+    ChildrenSettingsComponent,
+    NodeComponent,
+    FamilyTreeComponent
   ],
   imports: [
     BrowserModule,
