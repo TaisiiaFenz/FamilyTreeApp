@@ -16,6 +16,8 @@ import { ParentsSettingsComponent } from './parents-settings/parents-settings.co
 import { PartnersSettingsComponent } from './partners-settings/partners-settings.component';
 import { SiblingSettingsComponent } from './sibling-settings/sibling-settings.component';
 import { ChildrenSettingsComponent } from './children-settings/children-settings.component';
+import { StoreModule } from '@ngrx/store';
+import { entityReducer } from './redux/entity.reducer';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { ChildrenSettingsComponent } from './children-settings/children-settings
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    StoreModule.forRoot({entityPage: entityReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
