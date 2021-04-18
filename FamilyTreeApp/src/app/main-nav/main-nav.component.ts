@@ -16,6 +16,12 @@ export class MainNavComponent {
       shareReplay()
     );
 
+  personalInfo = false;
+
   constructor(private breakpointObserver: BreakpointObserver) {}
+
+  showPersonalInfo() {
+    this.personalInfo = !this.personalInfo;
+  }
 
 }
