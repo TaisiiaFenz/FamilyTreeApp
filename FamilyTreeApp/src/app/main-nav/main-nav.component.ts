@@ -9,7 +9,7 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./main-nav.component.less']
 })
 export class MainNavComponent {
-  @Input() entity: {};
+  @Input() entity;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
