@@ -1,3 +1,14 @@
-<div class="node">
-  {{ treeNode.name }}
+<div class="node-container">
+  <div *ngIf="(treeNode.gender == 'man')&&(treeNode.partners != 0)"
+       class="partner-line"
+  ></div>
+  <div *ngIf="(treeNode.gender == 'man')&&(treeNode.partners != 0)&&(treeNode.children != 0)"
+       class="children-line"
+  ></div>
+  <div *ngIf="(treeNode.gender == 'man')&&(treeNode.partners != 0)"
+       class="partner-line"
+  ></div>
+  <div class="node">
+    {{ treeNode.name }}
+  </div>
 </div>

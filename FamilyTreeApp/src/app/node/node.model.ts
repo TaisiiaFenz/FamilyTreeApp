@@ -1,10 +1,11 @@
 export class Node {
+  public partners;
+  public children;
+
   constructor(
     public id: number,
     public name: string,
     public parents: [],
-    public partners: [],
-    public children: [],
     public surname?: string,
     public gender?: string,
     public birthDate?: string,

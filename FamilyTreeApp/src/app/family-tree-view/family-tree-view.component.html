@@ -1,4 +1,10 @@
 <div *ngFor="let node of familyTree" class="family-tree-view">
+  <div *ngIf="node.parents.length != 0">
+    <app-family-tree-view
+      style="display: flex"
+      [familyTree]="node.parents">
+    </app-family-tree-view>
+    <div class="parent-line"></div>
+  </div>
   <app-node [treeNode]="node"></app-node>
-  <app-family-tree-view [familyTree]="node.parents"></app-family-tree-view>
 </div>

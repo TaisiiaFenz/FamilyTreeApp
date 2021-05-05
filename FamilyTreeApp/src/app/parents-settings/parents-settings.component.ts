@@ -23,11 +23,13 @@ export class ParentsSettingsComponent implements OnInit {
 
   addParents() {
     const motherNode = new Node(
-      this.entity.lastIndex + 1, `Mother of ${this.entity.activeNode.name}`, [], [], []
-    );
+      this.entity.lastIndex + 1, `Mother of ${this.entity.activeNode.name}`, [], 'Ivanova', 'woman');
     const fatherNode = new Node(
-      this.entity.lastIndex + 2, `Father of ${this.entity.activeNode.name}`, [], [], []
-    );
+      this.entity.lastIndex + 2, `Father of ${this.entity.activeNode.name}`, [], 'Ivanov', 'man');
+    motherNode.partners = [fatherNode];
+    fatherNode.partners = [motherNode];
+    motherNode.children = [this.entity.activeNode];
+    fatherNode.children = [this.entity.activeNode];
     this.store.dispatch(new ChangeLastIndex(this.entity.lastIndex + 2));
     this.store.dispatch(new AddParents(motherNode, fatherNode));
     console.log(this.entity);

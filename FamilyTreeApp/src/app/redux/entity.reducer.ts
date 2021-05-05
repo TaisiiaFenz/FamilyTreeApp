@@ -3,7 +3,9 @@ import {AddNode, ENTITY_ACTION} from './entity.action';
 const initialState = {
   activeNode: {
     id: 0,
-    name: 'Me'
+    name: 'Me',
+    parents: [],
+    partners: []
   },
   lastIndex: 0
 };
