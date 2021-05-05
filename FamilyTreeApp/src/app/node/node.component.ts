@@ -1,4 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {AddParents, ChangeActiveNode, ChangeLastIndex} from "../redux/entity.action";
+import {Store} from "@ngrx/store";
+import {AppState} from "../redux/app.state";
 
 @Component({
   selector: 'app-node',
@@ -8,9 +11,11 @@ import {Component, Input, OnInit} from '@angular/core';
 export class NodeComponent implements OnInit {
   @Input() treeNode;
 
-  constructor() { }
+  constructor(private store: Store<AppState>) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  changeActiveNode() {
+    this.store.dispatch(new ChangeActiveNode(this.treeNode));
   }
-
 }

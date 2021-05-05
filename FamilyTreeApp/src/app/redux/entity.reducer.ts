@@ -13,6 +13,11 @@ const initialState = {
 // tslint:disable-next-line:typedef
 export function entityReducer(state = initialState, action) {
   switch (action.type) {
+    case ENTITY_ACTION.CHANGE_ACTIVE_NODE:
+      return {
+        ...state,
+        activeNode: action.payload
+      }
     case ENTITY_ACTION.ADD_NODE:
       return {
         ...state,

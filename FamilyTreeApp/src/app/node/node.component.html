@@ -8,7 +8,7 @@
   <div *ngIf="(treeNode.gender == 'man')&&(treeNode.partners != 0)"
        class="partner-line"
   ></div>
-  <div class="node">
+  <div class="node" (click)="changeActiveNode()">
     {{ treeNode.name }}
   </div>
 </div>

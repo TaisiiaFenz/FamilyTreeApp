@@ -19,8 +19,4 @@ export class FamilyTreeComponent implements OnInit {
       this.familyTree = [entity.activeNode];
     });
   }
-
-  repaintFamilyTree() {
-    console.log(this.familyTree);
-  }
 }
