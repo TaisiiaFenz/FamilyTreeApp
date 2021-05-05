@@ -1,6 +1,6 @@
 export interface AppState {
   entityPage: {
     activeNode: {},
-    familyTree: []
-  }
+    lastIndex: number
+  };
 }

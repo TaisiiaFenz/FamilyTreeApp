@@ -11,7 +11,8 @@
       </button>
       <span>FamilyTreeApp</span>
     </mat-toolbar>
-    <ng-content></ng-content>
+<!--    <ng-content></ng-content>-->
+    <app-family-tree [entity]="entity"></app-family-tree>
   </mat-sidenav-content>
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"

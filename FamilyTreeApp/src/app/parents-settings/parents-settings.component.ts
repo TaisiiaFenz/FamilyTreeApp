@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {AppState} from "../redux/app.state";
+import {Store} from "@ngrx/store";
+import {AddParents, ChangeLastIndex} from "../redux/entity.action";
+import {Node} from "../node/node.model";
 
 @Component({
   selector: 'app-parents-settings',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentsSettingsComponent implements OnInit {
 
-  constructor() { }
+  public entity;
+
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
+    this.store.select('entityPage').subscribe((entity) => {
+      this.entity = entity;
+    });
   }
 
+  addParents() {
+    const motherNode = new Node(
+      this.entity.lastIndex + 1, `Mother of ${this.entity.activeNode.name}`, [], [], []
+    );
+    const fatherNode = new Node(
+      this.entity.lastIndex + 2, `Father of ${this.entity.activeNode.name}`, [], [], []
+    );
+    this.store.dispatch(new ChangeLastIndex(this.entity.lastIndex + 2));
+    this.store.dispatch(new AddParents(motherNode, fatherNode));
+    console.log(this.entity);
+  }
 }

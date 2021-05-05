@@ -21,6 +21,7 @@ import { entityReducer } from './redux/entity.reducer';
 import { NodeComponent } from './node/node.component';
 import { FamilyTreeComponent } from './family-tree/family-tree.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FamilyTreeViewComponent } from './family-tree-view/family-tree-view.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     SiblingSettingsComponent,
     ChildrenSettingsComponent,
     NodeComponent,
-    FamilyTreeComponent
+    FamilyTreeComponent,
+    FamilyTreeViewComponent
   ],
   imports: [
     BrowserModule,

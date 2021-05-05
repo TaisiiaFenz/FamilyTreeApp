@@ -1,21 +1,33 @@
-import {Action} from "@ngrx/store";
-import {AddNode, ENTITY_ACTION} from "./entity.action";
+import {AddNode, ENTITY_ACTION} from './entity.action';
 
 const initialState = {
   activeNode: {
-    name: "Me"
+    id: 0,
+    name: 'Me'
   },
-  familyTree: [{
-    name: "Me"
-  }]
-}
+  lastIndex: 0
+};
 
-export function entityReducer(state = initialState, action: AddNode) {
+// tslint:disable-next-line:typedef
+export function entityReducer(state = initialState, action) {
   switch (action.type) {
     case ENTITY_ACTION.ADD_NODE:
       return {
         ...state,
-        familyTree: [...state.familyTree, action.payload]
+        //familyTree: [...state.familyTree, action.payload]
+      }
+     case ENTITY_ACTION.ADD_PARENTS:
+      return {
+        ...state,
+        activeNode: {
+          ...state.activeNode,
+          parents: [action.payload1, action.payload2]
+        }
+      }
+    case ENTITY_ACTION.CHANGE_LAST_INDEX:
+      return {
+        ...state,
+        lastIndex: action.payload
       }
     default:
       return state;

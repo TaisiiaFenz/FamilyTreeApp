@@ -1,0 +1,4 @@
+<div *ngFor="let node of familyTree" class="family-tree-view">
+  <app-node [treeNode]="node"></app-node>
+  <app-family-tree-view [familyTree]="node.parents"></app-family-tree-view>
+</div>
