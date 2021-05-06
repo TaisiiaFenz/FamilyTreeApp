@@ -3,6 +3,7 @@ import {AppState} from "../redux/app.state";
 import {Store} from "@ngrx/store";
 import {AddParents, ChangeLastIndex} from "../redux/entity.action";
 import {Node} from "../node/node.model";
+import {paintNodes} from "../paintNodes";
 
 @Component({
   selector: 'app-parents-settings',
@@ -22,6 +23,7 @@ export class ParentsSettingsComponent implements OnInit {
   }
 
   addParents() {
+    paintNodes.splice(0,paintNodes.length);
     const motherNode = new Node(
       this.entity.lastIndex + 1, `Mother of ${this.entity.activeNode.name}`, [], 'Ivanova', 'woman');
     const fatherNode = new Node(

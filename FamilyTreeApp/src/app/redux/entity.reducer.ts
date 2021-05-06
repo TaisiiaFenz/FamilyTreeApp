@@ -5,7 +5,8 @@ const initialState = {
     id: 0,
     name: 'Me',
     parents: [],
-    partners: []
+    partners: [],
+    children: []
   },
   lastIndex: 0
 };

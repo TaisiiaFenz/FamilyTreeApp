@@ -1,4 +1,5 @@
 <div *ngFor="let node of familyTree" class="family-tree-view">
+
   <div *ngIf="node.parents.length != 0">
     <app-family-tree-view
       style="display: flex"
@@ -6,5 +7,27 @@
     </app-family-tree-view>
     <div class="parent-line"></div>
   </div>
-  <app-node [treeNode]="node"></app-node>
+
+  <app-node
+    *ngIf="isNeedToPaintNode( node)&&(node.partners.length == 0)"
+    [treeNode]="node">
+  </app-node>
+
+  <div *ngIf="(node.partners.length != 0)"
+  style="display: flex">
+
+    <app-node
+      *ngIf="isNeedToPaintNode(node)"
+      [treeNode]="node">
+    </app-node>
+
+    <div *ngFor="let partnerNode of node.partners">
+
+      <div *ngIf="isNeedToPaintNode(partnerNode)">
+        <app-family-tree-view
+          [familyTree]="[partnerNode]">
+        </app-family-tree-view>
+      </div>
+    </div>
+  </div>
 </div>
