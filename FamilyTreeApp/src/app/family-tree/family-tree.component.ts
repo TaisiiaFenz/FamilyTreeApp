@@ -15,6 +15,7 @@ export class FamilyTreeComponent implements OnInit {
   constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
+    console.log('CHANGE');
     this.store.select('entityPage').subscribe((entity) => {
       this.familyTree = [entity.activeNode];
     });

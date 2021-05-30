@@ -6,8 +6,6 @@ export namespace ENTITY_ACTION {
   export const CHANGE_LAST_INDEX = 'CHANGE_LAST_INDEX';
   export const CHANGE_ACTIVE_NODE = 'CHANGE_ACTIVE_NODE';
   export const ADD_PARENTS = 'ADD_PARENTS';
-  export const ADD_MOTHER = 'ADD_MOTHER';
-  export const ADD_FATHER = 'ADD_FOTHER';
 }
 
 export class AddNode implements Action {

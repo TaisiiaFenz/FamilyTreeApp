@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {AddParents, ChangeActiveNode, ChangeIsPaint, ChangeLastIndex} from "../redux/entity.action";
+import {AddParents, ChangeActiveNode,  ChangeLastIndex} from "../redux/entity.action";
 import {Store} from "@ngrx/store";
 import {AppState} from "../redux/app.state";
 import {paintNodes} from "../paintNodes";

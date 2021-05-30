@@ -12,4 +12,8 @@ export class ChildrenSettingsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addChild() {
+
+  }
+
 }

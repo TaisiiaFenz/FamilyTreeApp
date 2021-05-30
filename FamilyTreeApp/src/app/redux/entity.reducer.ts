@@ -22,7 +22,6 @@ export function entityReducer(state = initialState, action) {
     case ENTITY_ACTION.ADD_NODE:
       return {
         ...state,
-        //familyTree: [...state.familyTree, action.payload]
       }
      case ENTITY_ACTION.ADD_PARENTS:
       return {
