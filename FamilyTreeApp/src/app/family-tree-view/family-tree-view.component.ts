@@ -18,7 +18,7 @@ export class FamilyTreeViewComponent implements OnInit {
   constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
-    console.log('CHANGE');
+    // console.log('CHANGE');
     this.store.select('entityPage').subscribe((entity) => {
       this.entity = entity;
     });
@@ -26,7 +26,7 @@ export class FamilyTreeViewComponent implements OnInit {
 
   isNeedToPaintNode(node) {
     console.log(node);
-    console.log(paintNodes);
+    // console.log(paintNodes);
     let i = 0;
     paintNodes.forEach((el) => {
       if (el.id === node.id) {

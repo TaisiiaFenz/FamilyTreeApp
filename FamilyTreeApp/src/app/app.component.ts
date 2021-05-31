@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.store.select('entityPage').subscribe((entity) => {
       this.entity = entity;
-      console.log(entity);
+      // console.log(entity);
     });
   }
 }
